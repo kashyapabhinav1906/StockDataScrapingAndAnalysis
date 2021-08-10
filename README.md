@@ -55,9 +55,8 @@ query link: https://www.screener.in/screen/raw/?sort=&source=&order=&page=1&quer
 
 ### Iterating search results
 
-Notice that 3879 results passed the criteria set by us and they are stored across 156 pages. we need to insert the page number in the query link embedded at "&page=1&" to crawl across the pages 1-156 to get all the resulted stock links. Now, we are on page 1, let's collect all the stock page links and store them in the list. the links can be scraped by extracting 'href' tags associated with stock links using the 'bs4' package. We need to visit each stock page to source the data from it. It's done by creating beautifulsoup object of page, then locating tags that correspond to the data we are interested in and storing the data in an array format. below scroll over the example to get a glance at the web page.
+Notice that 3879 results passed the criteria set by us and they are stored across 156 pages. we need to insert the page number in the query link embedded at "&page=1&" to crawl across the pages 1-156 to get all the resulted stock links. Now, we are on page 1, let's collect all the stock page links and store them in the list. the links can be scraped by extracting 'href' tags associated with stock links using the 'bs4' package. We need to visit each stock page to source the data from it. It's done by creating beautifulsoup object of page, then locating tags that correspond to the data we are interested in and storing the data in an array format.
 
-![page visual scan](ScreenShots/page_scan.gif)
 
 
 The page contains several tables of historical data of parameters that describe the past performance and financial health of the company. But I have considered only a few indicators based on my intuition that decides the stability and profitability of a company in the competitive environment in the long run. You will see the selected indicators on the plot generated in a while.
@@ -83,22 +82,6 @@ I will present here some of my insights about its management. Let's go over them
 
 These insights just scratch the surface there is more to it like understanding interactions between indicators give even better insights. Reading plots and developing a story is an art that can be mastered by practice and experience. It is advised to go over the past few year financial reports to know the actual reasons behind changes observed in plots.
 
-Now we scraped data for the first company on the first page. this exercise has to be repeated for all the stock links on the first page, then move on to the second page and so on iteratively.
 
-Let's put our webcrawler into action. For demonstration purpose I made to the crawler to login into the source, visit first three pages and in every page, its performs scraping on the first three stock pages, and log out from the source. Below is a clip of it.
 
-![Web Crawling](ScreenShots/WebCrawler_working.gif)
 
-## Technologies used
-
-![](https://forthebadge.com/images/badges/made-with-python.svg)
-
-[<img target="_blank" src="ScreenShots/selenium.png" width=120/>](https://www.selenium.dev/)
-[<img target="_blank" src="ScreenShots/beautifulsoup.png" width=250>](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-[<img target="_blank" src="ScreenShots/matplotlib.svg" width=250>](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-
-</br>
-
-------
-## Creator:
-[<img target="_blank" src="https://media-exp1.licdn.com/dms/image/C4D03AQG-6F3HHlCTVw/profile-displayphoto-shrink_200_200/0?e=1599091200&v=beta&t=WcZLox9lzVQqIDJ2-5DsEhNFvEE1zrZcvkmcepJ9QH8" width=150>](https://skumar-djangoblog.herokuapp.com/)
